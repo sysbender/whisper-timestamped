@@ -31,17 +31,18 @@ python segment.py [options] input_file.words.json
 - `--punctuation-only`: Split only at punctuation marks
 - `-d, --debug`: Print debug information
 - `--verbose`: Be more verbose
+- `-f, --format`: Output format (vtt or srt, default: vtt)
 
 ### Examples
 
-1. Basic English segmentation:
+1. Basic English segmentation (outputs VTT by default):
 ```bash
 python segment.py -m en_core_web_trf input.words.json
 ```
 
-2. French segmentation with longer lines:
+2. French segmentation with longer lines in SRT format:
 ```bash
-python segment.py -m fr_core_news_sm -w 50 input.words.json
+python segment.py -m fr_core_news_sm -w 50 -f srt input.words.json
 ```
 
 3. Split only at punctuation marks:
@@ -54,10 +55,22 @@ python segment.py -m fr_core_news_sm --punctuation-only input.words.json
 python segment.py -m en_core_web_trf -l 3 -w 45 input.words.json
 ```
 
-### Output Format
+### Output Formats
 
-The tool outputs subtitles in SRT format:
+The tool supports two subtitle formats:
 
+#### VTT (Default)
+```vtt
+WEBVTT
+
+00:00:00.300 --> 00:00:02.040
+First line of subtitle
+
+00:00:02.420 --> 00:00:05.720
+Second line of subtitle
+```
+
+#### SRT (Optional)
 ```srt
 1
 00:00:00,300 --> 00:00:02,040

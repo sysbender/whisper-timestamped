@@ -210,11 +210,17 @@ def iterate_document(doc: Doc, timing: dict, args):
             last_end = sub_end  # Update last end time
             yield sub_start, sub_end, subtitle
 
-def write_srt(doc, timing, args):
-    comma: str = ','
+def write_vtt(doc, timing, args):
+    print("WEBVTT\n")
     for i, (start, end, text) in enumerate(iterate_document(doc, timing, args), start=1):
-        ts1 = format_timestamp(start, always_include_hours=True, decimal_marker=comma)
-        ts2 = format_timestamp(end, always_include_hours=True, decimal_marker=comma)
+        ts1 = format_timestamp(start, always_include_hours=True, decimal_marker='.')
+        ts2 = format_timestamp(end, always_include_hours=True, decimal_marker='.')
+        print(f"{ts1} --> {ts2}\n{text}\n")
+
+def write_srt(doc, timing, args):
+    for i, (start, end, text) in enumerate(iterate_document(doc, timing, args), start=1):
+        ts1 = format_timestamp(start, always_include_hours=True, decimal_marker=',')
+        ts2 = format_timestamp(end, always_include_hours=True, decimal_marker=',')
         print(f"{i}\n{ts1} --> {ts2}\n{text}\n")
 
 def configure_spaCy(model: str, entities: str, pauses: list = []):
@@ -230,7 +236,7 @@ def configure_spaCy(model: str, entities: str, pauses: list = []):
 def main():
     parser = argparse.ArgumentParser(
                 prog='subwisp',
-                description='Convert a whisper .json transcript into .srt subtitles with sentences, grammatically separated where possible.')
+                description='Convert a whisper .json transcript into subtitles with sentences, grammatically separated where possible.')
     parser.add_argument('input_file')
     parser.add_argument('-m', '--model', help='specify spaCy model', default="en_core_web_trf")
     parser.add_argument('-e', '--entities', help='optional custom entities for spaCy (.jsonl format)', default="")
@@ -242,6 +248,7 @@ def main():
                         action="store_const", dest="loglevel", const=logging.INFO)
     parser.add_argument('--punctuation-only', help='split only at punctuation', 
                         action="store_true", default=False)
+    parser.add_argument('-f', '--format', help='output format (vtt or srt)', choices=['vtt', 'srt'], default='vtt')
 
     args = parser.parse_args()
     logging.basicConfig(level=args.loglevel)
@@ -260,7 +267,11 @@ def main():
     verbal_pauses = scan_for_pauses(wtext, word_timing)
     nlp = configure_spaCy(args.model, args.entities, verbal_pauses)
     doc = nlp(wtext)
-    write_srt(doc, word_timing, args)
+    
+    if args.format == 'srt':
+        write_srt(doc, word_timing, args)
+    else:
+        write_vtt(doc, word_timing, args)
 
 if __name__ == '__main__':
     main()
