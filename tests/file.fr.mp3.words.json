@@ -1,0 +1,1490 @@
+{
+  "text": " Vous a m'orier créer un site web, mais vous ne savez pas vraiment comment vous y prendre ou par quelle boue commencer. Peut-être que certaines en trouvoues pour effaire appel un développeur en freelance. Mais vous vous dites, non, quand même, j'aimerais bien le faire moi-même. Eh bien la meilleure façon de plonger dans le monde du web, c'est de commencer par la base. Apprendre à écrire en langage HTML et en langage CSS. C'est souvent par là qu'on commence quand on a pris un codec, car tout le site, je dis bien tout le site, chois lesquels nous navigons sur Internet sont créés dans ces deux langages. Si vous avez toujours eu envie de créer vos premières page web, alors vous êtes au bon endroit. Dans ce cours, vous allez être vite capable de maîtriser les bases du HTML5, de faire de la mise en forme avec CSS3, d'agencez le contenu de vos pages, ou de créer vos propres formières. Alors, prêts à réaliser un site web de As-Ed, c'est parti.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.3,
+      "end": 5.72,
+      "text": " Vous a m'orier créer un site web, mais vous ne savez pas vraiment comment vous y prendre ou par quelle boue commencer.",
+      "tokens": [
+        50364,
+        10802,
+        257,
+        275,
+        6,
+        284,
+        811,
+        32062,
+        517,
+        3621,
+        3670,
+        11,
+        2420,
+        2630,
+        408,
+        30503,
+        1736,
+        8322,
+        2871,
+        2630,
+        288,
+        16566,
+        2820,
+        971,
+        29237,
+        15345,
+        68,
+        32817,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3841645025437878,
+      "compression_ratio": 1.5615942028985508,
+      "no_speech_prob": 0.016258951276540756,
+      "confidence": 0.592,
+      "words": [
+        {
+          "text": "Vous",
+          "start": 0.3,
+          "end": 0.48,
+          "confidence": 0.891
+        },
+        {
+          "text": "a",
+          "start": 0.48,
+          "end": 0.62,
+          "confidence": 0.245
+        },
+        {
+          "text": "m'orier",
+          "start": 0.62,
+          "end": 1.04,
+          "confidence": 0.311
+        },
+        {
+          "text": "créer",
+          "start": 1.04,
+          "end": 1.38,
+          "confidence": 0.711
+        },
+        {
+          "text": "un",
+          "start": 1.38,
+          "end": 1.58,
+          "confidence": 0.975
+        },
+        {
+          "text": "site",
+          "start": 1.58,
+          "end": 1.76,
+          "confidence": 0.744
+        },
+        {
+          "text": "web,",
+          "start": 1.76,
+          "end": 2.04,
+          "confidence": 0.841
+        },
+        {
+          "text": "mais",
+          "start": 2.42,
+          "end": 2.52,
+          "confidence": 0.818
+        },
+        {
+          "text": "vous",
+          "start": 2.52,
+          "end": 2.66,
+          "confidence": 0.888
+        },
+        {
+          "text": "ne",
+          "start": 2.66,
+          "end": 2.72,
+          "confidence": 0.952
+        },
+        {
+          "text": "savez",
+          "start": 2.72,
+          "end": 2.94,
+          "confidence": 0.892
+        },
+        {
+          "text": "pas",
+          "start": 2.94,
+          "end": 3.22,
+          "confidence": 0.982
+        },
+        {
+          "text": "vraiment",
+          "start": 3.22,
+          "end": 3.48,
+          "confidence": 0.636
+        },
+        {
+          "text": "comment",
+          "start": 3.48,
+          "end": 3.76,
+          "confidence": 0.975
+        },
+        {
+          "text": "vous",
+          "start": 3.76,
+          "end": 3.96,
+          "confidence": 0.916
+        },
+        {
+          "text": "y",
+          "start": 3.96,
+          "end": 4.1,
+          "confidence": 0.431
+        },
+        {
+          "text": "prendre",
+          "start": 4.1,
+          "end": 4.4,
+          "confidence": 0.534
+        },
+        {
+          "text": "ou",
+          "start": 4.4,
+          "end": 4.82,
+          "confidence": 0.533
+        },
+        {
+          "text": "par",
+          "start": 4.82,
+          "end": 5.0,
+          "confidence": 0.814
+        },
+        {
+          "text": "quelle",
+          "start": 5.0,
+          "end": 5.18,
+          "confidence": 0.29
+        },
+        {
+          "text": "boue",
+          "start": 5.18,
+          "end": 5.48,
+          "confidence": 0.558
+        },
+        {
+          "text": "commencer.",
+          "start": 5.48,
+          "end": 5.72,
+          "confidence": 0.429
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 6.82,
+      "end": 10.18,
+      "text": " Peut-être que certaines en trouvoues pour effaire appel un développeur en freelance.",
+      "tokens": [
+        50664,
+        2396,
+        325,
+        12,
+        9498,
+        631,
+        36993,
+        465,
+        3455,
+        85,
+        263,
+        279,
+        2016,
+        1244,
+        9020,
+        36332,
+        517,
+        22558,
+        494,
+        374,
+        465,
+        27931,
+        719,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3841645025437878,
+      "compression_ratio": 1.5615942028985508,
+      "no_speech_prob": 0.016258951276540756,
+      "confidence": 0.547,
+      "words": [
+        {
+          "text": "Peut-être",
+          "start": 6.82,
+          "end": 7.2,
+          "confidence": 0.953
+        },
+        {
+          "text": "que",
+          "start": 7.2,
+          "end": 7.32,
+          "confidence": 0.998
+        },
+        {
+          "text": "certaines",
+          "start": 7.32,
+          "end": 7.54,
+          "confidence": 0.548
+        },
+        {
+          "text": "en",
+          "start": 7.54,
+          "end": 7.76,
+          "confidence": 0.245
+        },
+        {
+          "text": "trouvoues",
+          "start": 7.76,
+          "end": 8.42,
+          "confidence": 0.344
+        },
+        {
+          "text": "pour",
+          "start": 8.42,
+          "end": 8.56,
+          "confidence": 0.38
+        },
+        {
+          "text": "effaire",
+          "start": 8.56,
+          "end": 8.88,
+          "confidence": 0.278
+        },
+        {
+          "text": "appel",
+          "start": 8.88,
+          "end": 9.06,
+          "confidence": 0.548
+        },
+        {
+          "text": "un",
+          "start": 9.06,
+          "end": 9.22,
+          "confidence": 0.392
+        },
+        {
+          "text": "développeur",
+          "start": 9.22,
+          "end": 9.64,
+          "confidence": 0.812
+        },
+        {
+          "text": "en",
+          "start": 9.64,
+          "end": 9.76,
+          "confidence": 0.969
+        },
+        {
+          "text": "freelance.",
+          "start": 9.76,
+          "end": 10.18,
+          "confidence": 0.585
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 11.0,
+      "end": 15.1,
+      "text": " Mais vous vous dites, non, quand même, j'aimerais bien le faire moi-même.",
+      "tokens": [
+        50864,
+        6313,
+        2630,
+        2630,
+        48291,
+        11,
+        2107,
+        11,
+        6932,
+        5698,
+        11,
+        361,
+        6,
+        43378,
+        1527,
+        3610,
+        476,
+        4865,
+        7748,
+        12,
+        27770,
+        13,
+        51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3841645025437878,
+      "compression_ratio": 1.5615942028985508,
+      "no_speech_prob": 0.016258951276540756,
+      "confidence": 0.887,
+      "words": [
+        {
+          "text": "Mais",
+          "start": 11.0,
+          "end": 11.16,
+          "confidence": 0.923
+        },
+        {
+          "text": "vous",
+          "start": 11.16,
+          "end": 11.36,
+          "confidence": 0.983
+        },
+        {
+          "text": "vous",
+          "start": 11.36,
+          "end": 11.46,
+          "confidence": 0.73
+        },
+        {
+          "text": "dites,",
+          "start": 11.46,
+          "end": 11.7,
+          "confidence": 0.98
+        },
+        {
+          "text": "non,",
+          "start": 12.38,
+          "end": 12.72,
+          "confidence": 0.675
+        },
+        {
+          "text": "quand",
+          "start": 12.76,
+          "end": 12.9,
+          "confidence": 0.678
+        },
+        {
+          "text": "même,",
+          "start": 12.9,
+          "end": 13.36,
+          "confidence": 0.998
+        },
+        {
+          "text": "j'aimerais",
+          "start": 13.7,
+          "end": 14.06,
+          "confidence": 0.934
+        },
+        {
+          "text": "bien",
+          "start": 14.06,
+          "end": 14.24,
+          "confidence": 0.96
+        },
+        {
+          "text": "le",
+          "start": 14.24,
+          "end": 14.42,
+          "confidence": 0.981
+        },
+        {
+          "text": "faire",
+          "start": 14.42,
+          "end": 14.64,
+          "confidence": 0.998
+        },
+        {
+          "text": "moi-même.",
+          "start": 14.64,
+          "end": 15.1,
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 16.18,
+      "end": 20.42,
+      "text": " Eh bien la meilleure façon de plonger dans le monde du web, c'est de commencer par la base.",
+      "tokens": [
+        51114,
+        9663,
+        3610,
+        635,
+        25039,
+        540,
+        20725,
+        368,
+        499,
+        556,
+        260,
+        2680,
+        476,
+        10431,
+        1581,
+        3670,
+        11,
+        269,
+        6,
+        377,
+        368,
+        32817,
+        971,
+        635,
+        3096,
+        13,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3841645025437878,
+      "compression_ratio": 1.5615942028985508,
+      "no_speech_prob": 0.016258951276540756,
+      "confidence": 0.906,
+      "words": [
+        {
+          "text": "Eh",
+          "start": 16.18,
+          "end": 16.36,
+          "confidence": 0.742
+        },
+        {
+          "text": "bien",
+          "start": 16.36,
+          "end": 16.54,
+          "confidence": 0.995
+        },
+        {
+          "text": "la",
+          "start": 16.54,
+          "end": 16.76,
+          "confidence": 0.514
+        },
+        {
+          "text": "meilleure",
+          "start": 16.76,
+          "end": 17.12,
+          "confidence": 0.974
+        },
+        {
+          "text": "façon",
+          "start": 17.12,
+          "end": 17.4,
+          "confidence": 0.977
+        },
+        {
+          "text": "de",
+          "start": 17.4,
+          "end": 17.62,
+          "confidence": 0.996
+        },
+        {
+          "text": "plonger",
+          "start": 17.62,
+          "end": 17.94,
+          "confidence": 0.754
+        },
+        {
+          "text": "dans",
+          "start": 17.94,
+          "end": 18.08,
+          "confidence": 0.996
+        },
+        {
+          "text": "le",
+          "start": 18.08,
+          "end": 18.2,
+          "confidence": 0.991
+        },
+        {
+          "text": "monde",
+          "start": 18.2,
+          "end": 18.38,
+          "confidence": 0.951
+        },
+        {
+          "text": "du",
+          "start": 18.38,
+          "end": 18.54,
+          "confidence": 0.977
+        },
+        {
+          "text": "web,",
+          "start": 18.54,
+          "end": 18.94,
+          "confidence": 0.925
+        },
+        {
+          "text": "c'est",
+          "start": 19.08,
+          "end": 19.34,
+          "confidence": 0.985
+        },
+        {
+          "text": "de",
+          "start": 19.34,
+          "end": 19.44,
+          "confidence": 0.983
+        },
+        {
+          "text": "commencer",
+          "start": 19.44,
+          "end": 19.76,
+          "confidence": 0.988
+        },
+        {
+          "text": "par",
+          "start": 19.76,
+          "end": 20.04,
+          "confidence": 0.992
+        },
+        {
+          "text": "la",
+          "start": 20.04,
+          "end": 20.18,
+          "confidence": 0.992
+        },
+        {
+          "text": "base.",
+          "start": 20.18,
+          "end": 20.42,
+          "confidence": 0.884
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 21.24,
+      "end": 25.24,
+      "text": " Apprendre à écrire en langage HTML et en langage CSS.",
+      "tokens": [
+        51364,
+        3132,
+        17218,
+        1531,
+        1136,
+        39572,
+        465,
+        2265,
+        609,
+        17995,
+        1030,
+        465,
+        2265,
+        609,
+        24387,
+        13,
+        51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.3841645025437878,
+      "compression_ratio": 1.5615942028985508,
+      "no_speech_prob": 0.016258951276540756,
+      "confidence": 0.81,
+      "words": [
+        {
+          "text": "Apprendre",
+          "start": 21.24,
+          "end": 21.8,
+          "confidence": 0.598
+        },
+        {
+          "text": "à",
+          "start": 21.8,
+          "end": 22.0,
+          "confidence": 0.8
+        },
+        {
+          "text": "écrire",
+          "start": 22.0,
+          "end": 22.44,
+          "confidence": 0.894
+        },
+        {
+          "text": "en",
+          "start": 22.44,
+          "end": 22.64,
+          "confidence": 0.9
+        },
+        {
+          "text": "langage",
+          "start": 22.64,
+          "end": 23.12,
+          "confidence": 0.695
+        },
+        {
+          "text": "HTML",
+          "start": 23.12,
+          "end": 23.68,
+          "confidence": 0.687
+        },
+        {
+          "text": "et",
+          "start": 23.68,
+          "end": 24.24,
+          "confidence": 0.968
+        },
+        {
+          "text": "en",
+          "start": 24.24,
+          "end": 24.38,
+          "confidence": 0.959
+        },
+        {
+          "text": "langage",
+          "start": 24.38,
+          "end": 24.88,
+          "confidence": 0.955
+        },
+        {
+          "text": "CSS.",
+          "start": 24.88,
+          "end": 25.24,
+          "confidence": 0.906
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 2500,
+      "start": 26.46,
+      "end": 31.44,
+      "text": " C'est souvent par là qu'on commence quand on a pris un codec, car tout le site, je dis bien tout le site,",
+      "tokens": [
+        50364,
+        383,
+        6,
+        377,
+        20847,
+        971,
+        3684,
+        421,
+        6,
+        266,
+        18137,
+        6932,
+        322,
+        257,
+        16163,
+        517,
+        3089,
+        66,
+        11,
+        1032,
+        3486,
+        476,
+        3621,
+        11,
+        1506,
+        717,
+        3610,
+        3486,
+        476,
+        3621,
+        11,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2979690210143132,
+      "compression_ratio": 1.5833333333333333,
+      "no_speech_prob": 0.4629068374633789,
+      "confidence": 0.679,
+      "words": [
+        {
+          "text": "C'est",
+          "start": 26.46,
+          "end": 26.66,
+          "confidence": 0.807
+        },
+        {
+          "text": "souvent",
+          "start": 26.66,
+          "end": 26.88,
+          "confidence": 0.984
+        },
+        {
+          "text": "par",
+          "start": 26.88,
+          "end": 27.08,
+          "confidence": 0.682
+        },
+        {
+          "text": "là",
+          "start": 27.08,
+          "end": 27.2,
+          "confidence": 0.688
+        },
+        {
+          "text": "qu'on",
+          "start": 27.2,
+          "end": 27.4,
+          "confidence": 0.979
+        },
+        {
+          "text": "commence",
+          "start": 27.4,
+          "end": 27.84,
+          "confidence": 0.887
+        },
+        {
+          "text": "quand",
+          "start": 27.84,
+          "end": 28.06,
+          "confidence": 0.943
+        },
+        {
+          "text": "on",
+          "start": 28.06,
+          "end": 28.22,
+          "confidence": 0.989
+        },
+        {
+          "text": "a",
+          "start": 28.22,
+          "end": 28.38,
+          "confidence": 0.429
+        },
+        {
+          "text": "pris",
+          "start": 28.38,
+          "end": 28.46,
+          "confidence": 0.203
+        },
+        {
+          "text": "un",
+          "start": 28.46,
+          "end": 28.56,
+          "confidence": 0.93
+        },
+        {
+          "text": "codec,",
+          "start": 28.56,
+          "end": 29.38,
+          "confidence": 0.332
+        },
+        {
+          "text": "car",
+          "start": 29.7,
+          "end": 29.72,
+          "confidence": 0.808
+        },
+        {
+          "text": "tout",
+          "start": 29.72,
+          "end": 29.9,
+          "confidence": 0.589
+        },
+        {
+          "text": "le",
+          "start": 29.9,
+          "end": 30.1,
+          "confidence": 0.439
+        },
+        {
+          "text": "site,",
+          "start": 30.1,
+          "end": 30.32,
+          "confidence": 0.991
+        },
+        {
+          "text": "je",
+          "start": 30.54,
+          "end": 30.62,
+          "confidence": 0.383
+        },
+        {
+          "text": "dis",
+          "start": 30.62,
+          "end": 30.78,
+          "confidence": 0.584
+        },
+        {
+          "text": "bien",
+          "start": 30.78,
+          "end": 30.94,
+          "confidence": 0.894
+        },
+        {
+          "text": "tout",
+          "start": 30.94,
+          "end": 31.12,
+          "confidence": 0.775
+        },
+        {
+          "text": "le",
+          "start": 31.12,
+          "end": 31.26,
+          "confidence": 0.557
+        },
+        {
+          "text": "site,",
+          "start": 31.26,
+          "end": 31.44,
+          "confidence": 0.978
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 2500,
+      "start": 31.9,
+      "end": 35.42,
+      "text": " chois lesquels nous navigons sur Internet sont créés dans ces deux langages.",
+      "tokens": [
+        50664,
+        1586,
+        271,
+        1512,
+        358,
+        1625,
+        4666,
+        7407,
+        892,
+        1022,
+        7703,
+        4900,
+        15609,
+        2191,
+        2680,
+        7879,
+        8208,
+        2265,
+        1660,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2979690210143132,
+      "compression_ratio": 1.5833333333333333,
+      "no_speech_prob": 0.4629068374633789,
+      "confidence": 0.515,
+      "words": [
+        {
+          "text": "chois",
+          "start": 31.9,
+          "end": 32.1,
+          "confidence": 0.082
+        },
+        {
+          "text": "lesquels",
+          "start": 32.1,
+          "end": 32.3,
+          "confidence": 0.458
+        },
+        {
+          "text": "nous",
+          "start": 32.3,
+          "end": 32.4,
+          "confidence": 0.601
+        },
+        {
+          "text": "navigons",
+          "start": 32.4,
+          "end": 32.82,
+          "confidence": 0.324
+        },
+        {
+          "text": "sur",
+          "start": 32.82,
+          "end": 32.96,
+          "confidence": 0.992
+        },
+        {
+          "text": "Internet",
+          "start": 32.96,
+          "end": 33.44,
+          "confidence": 0.521
+        },
+        {
+          "text": "sont",
+          "start": 33.44,
+          "end": 33.96,
+          "confidence": 0.608
+        },
+        {
+          "text": "créés",
+          "start": 33.96,
+          "end": 34.36,
+          "confidence": 0.826
+        },
+        {
+          "text": "dans",
+          "start": 34.36,
+          "end": 34.58,
+          "confidence": 0.951
+        },
+        {
+          "text": "ces",
+          "start": 34.58,
+          "end": 34.82,
+          "confidence": 0.886
+        },
+        {
+          "text": "deux",
+          "start": 34.82,
+          "end": 34.98,
+          "confidence": 0.944
+        },
+        {
+          "text": "langages.",
+          "start": 34.98,
+          "end": 35.42,
+          "confidence": 0.96
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 2500,
+      "start": 36.42,
+      "end": 41.14,
+      "text": " Si vous avez toujours eu envie de créer vos premières page web, alors vous êtes au bon endroit.",
+      "tokens": [
+        50864,
+        4909,
+        2630,
+        11766,
+        11936,
+        2228,
+        24149,
+        368,
+        32062,
+        13845,
+        11222,
+        13927,
+        3028,
+        3670,
+        11,
+        11246,
+        2630,
+        18935,
+        1609,
+        4428,
+        47390,
+        13,
+        51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2979690210143132,
+      "compression_ratio": 1.5833333333333333,
+      "no_speech_prob": 0.4629068374633789,
+      "confidence": 0.888,
+      "words": [
+        {
+          "text": "Si",
+          "start": 36.42,
+          "end": 36.62,
+          "confidence": 0.965
+        },
+        {
+          "text": "vous",
+          "start": 36.62,
+          "end": 36.76,
+          "confidence": 0.997
+        },
+        {
+          "text": "avez",
+          "start": 36.76,
+          "end": 37.08,
+          "confidence": 0.995
+        },
+        {
+          "text": "toujours",
+          "start": 37.08,
+          "end": 37.42,
+          "confidence": 0.994
+        },
+        {
+          "text": "eu",
+          "start": 37.42,
+          "end": 37.58,
+          "confidence": 0.92
+        },
+        {
+          "text": "envie",
+          "start": 37.58,
+          "end": 37.84,
+          "confidence": 0.847
+        },
+        {
+          "text": "de",
+          "start": 37.84,
+          "end": 38.02,
+          "confidence": 0.997
+        },
+        {
+          "text": "créer",
+          "start": 38.02,
+          "end": 38.2,
+          "confidence": 0.981
+        },
+        {
+          "text": "vos",
+          "start": 38.2,
+          "end": 38.38,
+          "confidence": 0.965
+        },
+        {
+          "text": "premières",
+          "start": 38.38,
+          "end": 38.7,
+          "confidence": 0.963
+        },
+        {
+          "text": "page",
+          "start": 38.7,
+          "end": 38.88,
+          "confidence": 0.527
+        },
+        {
+          "text": "web,",
+          "start": 38.88,
+          "end": 39.38,
+          "confidence": 0.932
+        },
+        {
+          "text": "alors",
+          "start": 39.78,
+          "end": 39.96,
+          "confidence": 0.722
+        },
+        {
+          "text": "vous",
+          "start": 39.96,
+          "end": 40.18,
+          "confidence": 0.966
+        },
+        {
+          "text": "êtes",
+          "start": 40.18,
+          "end": 40.38,
+          "confidence": 0.99
+        },
+        {
+          "text": "au",
+          "start": 40.38,
+          "end": 40.72,
+          "confidence": 0.858
+        },
+        {
+          "text": "bon",
+          "start": 40.72,
+          "end": 40.88,
+          "confidence": 0.556
+        },
+        {
+          "text": "endroit.",
+          "start": 40.88,
+          "end": 41.14,
+          "confidence": 0.995
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 2500,
+      "start": 42.24,
+      "end": 46.48,
+      "text": " Dans ce cours, vous allez être vite capable de maîtriser les bases du HTML5,",
+      "tokens": [
+        51164,
+        16897,
+        1769,
+        25452,
+        11,
+        2630,
+        18146,
+        7418,
+        24462,
+        8189,
+        368,
+        463,
+        20028,
+        5714,
+        260,
+        1512,
+        17949,
+        1581,
+        17995,
+        20,
+        11,
+        51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2979690210143132,
+      "compression_ratio": 1.5833333333333333,
+      "no_speech_prob": 0.4629068374633789,
+      "confidence": 0.845,
+      "words": [
+        {
+          "text": "Dans",
+          "start": 42.24,
+          "end": 42.46,
+          "confidence": 0.977
+        },
+        {
+          "text": "ce",
+          "start": 42.46,
+          "end": 42.66,
+          "confidence": 0.996
+        },
+        {
+          "text": "cours,",
+          "start": 42.66,
+          "end": 43.08,
+          "confidence": 0.743
+        },
+        {
+          "text": "vous",
+          "start": 43.34,
+          "end": 43.5,
+          "confidence": 0.992
+        },
+        {
+          "text": "allez",
+          "start": 43.5,
+          "end": 43.68,
+          "confidence": 0.981
+        },
+        {
+          "text": "être",
+          "start": 43.68,
+          "end": 43.92,
+          "confidence": 0.992
+        },
+        {
+          "text": "vite",
+          "start": 43.92,
+          "end": 44.18,
+          "confidence": 0.782
+        },
+        {
+          "text": "capable",
+          "start": 44.18,
+          "end": 44.56,
+          "confidence": 0.665
+        },
+        {
+          "text": "de",
+          "start": 44.56,
+          "end": 44.8,
+          "confidence": 0.99
+        },
+        {
+          "text": "maîtriser",
+          "start": 44.8,
+          "end": 45.26,
+          "confidence": 0.794
+        },
+        {
+          "text": "les",
+          "start": 45.26,
+          "end": 45.42,
+          "confidence": 0.979
+        },
+        {
+          "text": "bases",
+          "start": 45.42,
+          "end": 45.7,
+          "confidence": 0.691
+        },
+        {
+          "text": "du",
+          "start": 45.7,
+          "end": 45.84,
+          "confidence": 0.74
+        },
+        {
+          "text": "HTML5,",
+          "start": 45.84,
+          "end": 46.48,
+          "confidence": 0.823
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 2500,
+      "start": 47.16,
+      "end": 53.48,
+      "text": " de faire de la mise en forme avec CSS3, d'agencez le contenu de vos pages, ou de créer vos propres formières.",
+      "tokens": [
+        51414,
+        368,
+        4865,
+        368,
+        635,
+        36845,
+        465,
+        28670,
+        4163,
+        24387,
+        18,
+        11,
+        274,
+        6,
+        559,
+        655,
+        89,
+        476,
+        21795,
+        84,
+        368,
+        13845,
+        7183,
+        11,
+        2820,
+        368,
+        32062,
+        13845,
+        2365,
+        495,
+        1254,
+        39408,
+        13,
+        51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.2979690210143132,
+      "compression_ratio": 1.5833333333333333,
+      "no_speech_prob": 0.4629068374633789,
+      "confidence": 0.805,
+      "words": [
+        {
+          "text": "de",
+          "start": 47.16,
+          "end": 47.36,
+          "confidence": 0.986
+        },
+        {
+          "text": "faire",
+          "start": 47.36,
+          "end": 47.58,
+          "confidence": 0.971
+        },
+        {
+          "text": "de",
+          "start": 47.58,
+          "end": 47.72,
+          "confidence": 0.997
+        },
+        {
+          "text": "la",
+          "start": 47.72,
+          "end": 47.8,
+          "confidence": 0.995
+        },
+        {
+          "text": "mise",
+          "start": 47.8,
+          "end": 48.0,
+          "confidence": 0.979
+        },
+        {
+          "text": "en",
+          "start": 48.0,
+          "end": 48.16,
+          "confidence": 0.978
+        },
+        {
+          "text": "forme",
+          "start": 48.16,
+          "end": 48.34,
+          "confidence": 0.866
+        },
+        {
+          "text": "avec",
+          "start": 48.34,
+          "end": 48.62,
+          "confidence": 0.995
+        },
+        {
+          "text": "CSS3,",
+          "start": 48.62,
+          "end": 49.7,
+          "confidence": 0.918
+        },
+        {
+          "text": "d'agencez",
+          "start": 49.7,
+          "end": 50.52,
+          "confidence": 0.64
+        },
+        {
+          "text": "le",
+          "start": 50.52,
+          "end": 50.6,
+          "confidence": 0.96
+        },
+        {
+          "text": "contenu",
+          "start": 50.6,
+          "end": 50.98,
+          "confidence": 0.957
+        },
+        {
+          "text": "de",
+          "start": 50.98,
+          "end": 51.08,
+          "confidence": 0.922
+        },
+        {
+          "text": "vos",
+          "start": 51.08,
+          "end": 51.26,
+          "confidence": 0.98
+        },
+        {
+          "text": "pages,",
+          "start": 51.26,
+          "end": 51.68,
+          "confidence": 0.839
+        },
+        {
+          "text": "ou",
+          "start": 51.86,
+          "end": 52.04,
+          "confidence": 0.543
+        },
+        {
+          "text": "de",
+          "start": 52.04,
+          "end": 52.26,
+          "confidence": 0.983
+        },
+        {
+          "text": "créer",
+          "start": 52.26,
+          "end": 52.48,
+          "confidence": 0.718
+        },
+        {
+          "text": "vos",
+          "start": 52.48,
+          "end": 52.78,
+          "confidence": 0.986
+        },
+        {
+          "text": "propres",
+          "start": 52.78,
+          "end": 53.2,
+          "confidence": 0.516
+        },
+        {
+          "text": "formières.",
+          "start": 53.2,
+          "end": 53.48,
+          "confidence": 0.618
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 5300,
+      "start": 54.64,
+      "end": 58.72,
+      "text": " Alors, prêts à réaliser un site web de As-Ed, c'est parti.",
+      "tokens": [
+        50364,
+        9946,
+        11,
+        582,
+        44309,
+        1531,
+        18911,
+        6694,
+        517,
+        3621,
+        3670,
+        368,
+        1018,
+        12,
+        27061,
+        11,
+        269,
+        6,
+        377,
+        24408,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.4429751271786897,
+      "compression_ratio": 0.8840579710144928,
+      "no_speech_prob": 0.1438266485929489,
+      "confidence": 0.685,
+      "words": [
+        {
+          "text": "Alors,",
+          "start": 54.64,
+          "end": 54.9,
+          "confidence": 0.832
+        },
+        {
+          "text": "prêts",
+          "start": 55.42,
+          "end": 55.76,
+          "confidence": 0.406
+        },
+        {
+          "text": "à",
+          "start": 55.76,
+          "end": 55.86,
+          "confidence": 0.982
+        },
+        {
+          "text": "réaliser",
+          "start": 55.86,
+          "end": 56.24,
+          "confidence": 0.976
+        },
+        {
+          "text": "un",
+          "start": 56.24,
+          "end": 56.44,
+          "confidence": 0.98
+        },
+        {
+          "text": "site",
+          "start": 56.44,
+          "end": 56.66,
+          "confidence": 0.859
+        },
+        {
+          "text": "web",
+          "start": 56.66,
+          "end": 56.84,
+          "confidence": 0.973
+        },
+        {
+          "text": "de",
+          "start": 56.84,
+          "end": 57.14,
+          "confidence": 0.978
+        },
+        {
+          "text": "As-Ed,",
+          "start": 57.14,
+          "end": 57.72,
+          "confidence": 0.263
+        },
+        {
+          "text": "c'est",
+          "start": 58.24,
+          "end": 58.46,
+          "confidence": 0.96
+        },
+        {
+          "text": "parti.",
+          "start": 58.46,
+          "end": 58.72,
+          "confidence": 0.97
+        }
+      ]
+    }
+  ],
+  "language": "fr"
+}
