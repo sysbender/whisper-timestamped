@@ -6,21 +6,11 @@ RUN apt-get update && \
 
 RUN python3 -m pip install --upgrade pip
 
-
-
 # Force CPU versions of torch
 RUN pip3 install \
     torch==1.13.1+cpu \
     torchaudio==0.13.1+cpu \
     -f https://download.pytorch.org/whl/torch_stable.html 
-    
-    # && \
-    # pip3 install --upgrade --force-reinstall "numpy>=1.15.0, <1.24.0" && \
-    # pip3 install --upgrade --force-reinstall "scipy>=1.5.0, <1.10.0" && \
-    # python3 -m spacy download en_core_web_trf 
-
-
-
 
 # Python installation
 WORKDIR /usr/src/app
@@ -36,15 +26,16 @@ COPY whisper_timestamped /usr/src/app/whisper_timestamped
 RUN cd /usr/src/app/ && pip3 install ".[dev]"
 
 # install spacy
-RUN pip3 install spacy==3.5.4 &&  python3 -m spacy download en_core_web_trf && python3 -m spacy download fr_core_news_sm
+RUN pip3 install spacy==3.5.4 && \
+    python3 -m spacy download en_core_web_trf && \
+    python3 -m spacy download fr_core_news_sm
 
+# Copy service and segmentation
+COPY service /usr/src/app/service
+COPY segmentation /usr/src/app/segmentation
 
+# Set environment variable for data directory
+ENV DATA_DIR=/data
 
-
-# Cleanup
-RUN rm -R /usr/src/app/requirements.txt /usr/src/app/setup.py /usr/src/app/whisper_timestamped
-
-# Copy tests
-COPY tests /usr/src/app/tests
-
-ENTRYPOINT ["/bin/bash"]
+# Start the service
+ENTRYPOINT ["python3", "/usr/src/app/service/service.py"]
