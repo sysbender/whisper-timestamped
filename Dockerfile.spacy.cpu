@@ -37,5 +37,9 @@ COPY segmentation /usr/src/app/segmentation
 # Set environment variable for data directory
 ENV DATA_DIR=/data
 
+# Cleanup
+RUN rm -R /usr/src/app/requirements.txt /usr/src/app/setup.py /usr/src/app/whisper_timestamped
+
+
 # Start the service
 ENTRYPOINT ["python3", "/usr/src/app/service/service.py"]
