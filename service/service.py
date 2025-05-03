@@ -111,9 +111,9 @@ def process_file(input_file: Path):
         cmd = [
             'python3',
             '/usr/src/app/segmentation/segment.py',  # Use absolute path in Docker
-            '--model', spacy_model,
-            '--punctuation-only',  # Force punctuation-only segmentation
             '--format', 'vtt',
+            '--lang', detected_lang,
+            '--output', str(vtt_path),
             str(json_path)
         ]
         with open(vtt_path, 'w') as f:

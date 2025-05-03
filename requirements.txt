@@ -1,2 +1,3 @@
-pysbd>=0.3.4
-spacy
+Cython
+dtw-python
+openai-whisper
