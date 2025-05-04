@@ -1,20 +1,24 @@
 import json
 import argparse
 import spacy
+import spacy.cli
 from whisper.utils import format_timestamp
 import sys
 from pathlib import Path
 
 def detect_language(text: str) -> str:
     """Detect if text is primarily English or French using spacy language models"""
-    try:
-        nlp_en = spacy.load('en_core_web_sm')
-        nlp_fr = spacy.load('fr_core_news_sm')
-    except OSError:
-        print("Please install required language models:")
-        print("python -m spacy download en_core_web_sm")
-        print("python -m spacy download fr_core_news_sm")
-        sys.exit(1)
+    def ensure_model(model_name: str):
+        try:
+            return spacy.load(model_name)
+        except OSError:
+            print(f"Downloading spaCy model '{model_name}'...", file=sys.stderr)
+            spacy.cli.download(model_name)
+            return spacy.load(model_name)
+
+    # Load both models using the helper function
+    nlp_en = ensure_model('en_core_web_sm')
+    nlp_fr = ensure_model('fr_core_news_sm')
         
     # Process a sample of the text (first 1000 characters) for efficiency
     sample_text = text[:1000]
@@ -120,40 +124,55 @@ def main():
     
     args = parser.parse_args()
     
-    # Process the file to get text for language detection if needed
-    text, timing = load_whisper_json(args.input_file)
-    
-    # Detect or use specified language
-    lang = args.lang if args.lang else detect_language(text)
-    print(f"Using language: {lang}", file=sys.stderr)
-    
-    # Load appropriate spaCy model
-    model_name = 'en_core_web_sm' if lang == 'en' else 'fr_core_news_sm'
     try:
-        nlp = spacy.load(model_name)
-    except OSError:
-        print(f"Please install the required spaCy model using: python -m spacy download {model_name}")
-        return
-    
-    # Process segments
-    segments = process_text(text, timing, nlp)
-    
-    # Handle output file
-    output_file = None
-    if args.output:
-        output_path = Path(args.output)
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        output_file = open(output_path, 'w', encoding='utf-8')
-    
-    try:
-        # Output in requested format
-        if args.format == 'srt':
-            write_srt(segments, output_file if output_file else sys.stdout)
-        else:
-            write_vtt(segments, output_file if output_file else sys.stdout)
-    finally:
-        if output_file:
-            output_file.close()
+        # Process the file to get text for language detection if needed
+        text, timing = load_whisper_json(args.input_file)
+        
+        # Detect or use specified language
+        lang = args.lang if args.lang else detect_language(text)
+        print(f"Using language: {lang}", file=sys.stderr)
+        
+        # Load appropriate spaCy model
+        model_name = 'en_core_web_sm' if lang == 'en' else 'fr_core_news_sm'
+        def ensure_model(model_name: str):
+            try:
+                return spacy.load(model_name)
+            except OSError:
+                print(f"Downloading spaCy model '{model_name}'...", file=sys.stderr)
+                spacy.cli.download(model_name)
+                return spacy.load(model_name)
+        
+        nlp = ensure_model(model_name)
+        
+        # Process segments
+        segments = process_text(text, timing, nlp)
+        
+        # Handle output file
+        output_file = None
+        if args.output:
+            output_path = Path(args.output)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_file = open(output_path, 'w', encoding='utf-8')
+        
+        try:
+            # Output in requested format
+            if args.format == 'srt':
+                write_srt(segments, output_file if output_file else sys.stdout)
+            else:
+                write_vtt(segments, output_file if output_file else sys.stdout)
+        finally:
+            if output_file:
+                output_file.close()
+                
+    except json.JSONDecodeError:
+        print(f"Error: Could not parse JSON file: {args.input_file}", file=sys.stderr)
+        sys.exit(1)
+    except FileNotFoundError:
+        print(f"Error: File not found: {args.input_file}", file=sys.stderr)
+        sys.exit(1)
+    except Exception as e:
+        print(f"Error: {str(e)}", file=sys.stderr)
+        sys.exit(1)
 
 if __name__ == '__main__':
     main()

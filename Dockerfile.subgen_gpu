@@ -1,11 +1,29 @@
-FROM python:3.9
+# Use NVIDIA CUDA base image with cuDNN
+FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04
 
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install Python and other dependencies
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        ffmpeg portaudio19-dev
+        python3.10 \
+        python3-pip \
+        python3.10-dev \
+        gcc \
+        g++ \
+        make \
+        ffmpeg \
+        portaudio19-dev \
+        && rm -rf /var/lib/apt/lists/*
 
-RUN python3 -m pip install --upgrade pip && \
-pip3  install --upgrade --force-reinstall "numpy>=1.15.0, <1.24.0" 
+RUN python3.10 -m pip install --upgrade pip && \
+    pip3 install --upgrade --force-reinstall "numpy>=1.15.0, <1.24.0"
+
+# Set CUDA related env vars
+ENV CUDA_HOME=/usr/local/cuda
+ENV PATH=${CUDA_HOME}/bin:${PATH}
+ENV LD_LIBRARY_PATH=${CUDA_HOME}/lib64:${LD_LIBRARY_PATH}
+ENV TORCH_CUDA_ARCH_LIST="7.0;7.5;8.0;8.6+PTX"
 
 # Python installation
 WORKDIR /usr/src/app
@@ -18,11 +36,14 @@ RUN cd /usr/src/app/ && pip3 install -r requirements.txt
 COPY setup.py /usr/src/app/setup.py
 COPY whisper_timestamped /usr/src/app/whisper_timestamped
 
-# Install
+# Install with CUDA support
 RUN cd /usr/src/app/ && pip3 install ".[dev]"
 RUN cd /usr/src/app/ && pip3 install ".[vad_silero]"
 RUN cd /usr/src/app/ && pip3 install ".[vad_auditok]"
 RUN cd /usr/src/app/ && pip3 install ".[test]"
+
+# Install PyTorch with CUDA support for CUDA 11.8
+RUN pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
 # install spacy
 RUN pip3 install spacy==3.5.4 && \
@@ -38,8 +59,6 @@ ENV DATA_DIR=/data
 
 # Cleanup
 RUN rm -R /usr/src/app/requirements.txt /usr/src/app/setup.py /usr/src/app/whisper_timestamped
-
-
 
 # Start the service
 ENTRYPOINT ["python3", "/usr/src/app/service/service.py"]
