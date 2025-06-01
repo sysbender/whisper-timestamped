@@ -21,6 +21,11 @@ DATA_DIR = Path(os.getenv('DATA_DIR', '/data'))
 INPUT_DIR = DATA_DIR / 'input'
 PROCESSING_DIR = DATA_DIR / 'processing'
 OUTPUT_DIR = DATA_DIR / 'output'
+ARCHIVE_DIR = DATA_DIR / 'archive'
+MODELS_DIR = DATA_DIR / 'models'
+
+# Model configuration
+WHISPER_MODEL = os.getenv('WHISPER_MODEL', 'large-v3')
 
 # Language to spaCy model mapping
 LANG_TO_SPACY = {
@@ -33,11 +38,20 @@ LANG_TO_SPACY = {
 _model = None
 
 def get_model():
-    """Get or initialize the Whisper model"""
+    """Get or initialize the Whisper model with local caching"""
     global _model
     if _model is None:
         device = "cuda" if torch.cuda.is_available() else "cpu"
-        _model = whisper_timestamped.load_model("medium", device=device)
+        # Configure whisper to use our models directory
+        os.environ["WHISPER_MODELS_DIR"] = str(MODELS_DIR)
+        
+        # Check if model already exists in cache
+        model_path = MODELS_DIR / f"{WHISPER_MODEL}.pt"
+        if not model_path.exists():
+            logging.info(f"Downloading model {WHISPER_MODEL} to {MODELS_DIR}...")
+        
+        _model = whisper_timestamped.load_model(WHISPER_MODEL, device=device, download_root=str(MODELS_DIR))
+        logging.info(f"Model {WHISPER_MODEL} loaded on {device}")
     return _model
 
 def extract_audio_from_mp4(mp4_path: Path) -> Path:
@@ -52,24 +66,18 @@ def extract_audio_from_mp4(mp4_path: Path) -> Path:
     return output_path
 
 def ensure_directories():
-    """Create necessary directories if they don't exist, gracefully handle mounted volumes"""
+    """Ensure all required directories exist and have write permissions."""
     try:
         # First verify /data exists since it should be mounted
         if not DATA_DIR.exists():
             raise RuntimeError(f"Data directory {DATA_DIR} does not exist. Please make sure the volume is mounted correctly.")
         
         # Create subdirectories if they don't exist
-        for directory in [INPUT_DIR, PROCESSING_DIR, OUTPUT_DIR]:
+        for directory in [INPUT_DIR, PROCESSING_DIR, OUTPUT_DIR, ARCHIVE_DIR, MODELS_DIR]:
             directory.mkdir(parents=True, exist_ok=True)
-            
-        # Verify write permissions
-        for directory in [INPUT_DIR, PROCESSING_DIR, OUTPUT_DIR]:
-            test_file = directory / '.write_test'
-            try:
-                test_file.touch()
-                test_file.unlink()
-            except (OSError, PermissionError) as e:
-                raise RuntimeError(f"No write permission in {directory}. Error: {str(e)}")
+            # Verify write permissions
+            if not os.access(directory, os.W_OK):
+                raise PermissionError(f"No write permission for directory: {directory}")
                 
         logging.info("Directory structure verified and ready")
         
@@ -92,9 +100,16 @@ def process_file(input_file: Path):
         else:
             audio_file = proc_file
 
-        # Get cached model and transcribe
+        # Get cached model and transcribe with accurate settings
         model = get_model()
-        result = whisper_timestamped.transcribe(model, str(audio_file))
+        result = whisper_timestamped.transcribe(
+            model, 
+            str(audio_file), 
+            vad='silero',  # Use silero VAD
+            beam_size=5,   # Enable beam search
+            best_of=5,     # Compare multiple candidates
+            temperature=(0.0, 0.2, 0.4, 0.6, 0.8, 1.0)  # Try different sampling temperatures
+        )
 
         # Save timestamped JSON
         json_path = audio_file.with_suffix('.words.json')
@@ -119,10 +134,16 @@ def process_file(input_file: Path):
         with open(vtt_path, 'w') as f:
             subprocess.run(cmd, check=True, stdout=f)
 
-        # Cleanup processing directory
-        os.remove(audio_file)
-        os.remove(json_path)
-        logging.info(f"Successfully processed {input_file.name}")
+        # Archive processed files (copy VTT, move others)
+        archive_audio_path = ARCHIVE_DIR / audio_file.name
+        archive_json_path = ARCHIVE_DIR / json_path.name
+        archive_vtt_path = ARCHIVE_DIR / vtt_path.name
+
+        shutil.move(str(audio_file), str(archive_audio_path))
+        shutil.move(str(json_path), str(archive_json_path))
+        shutil.copy2(str(vtt_path), str(archive_vtt_path))  # Copy VTT instead of moving
+
+        logging.info(f"Successfully processed and archived {input_file.name}")
 
     except Exception as e:
         logging.error(f"Error processing {input_file.name}: {str(e)}")
