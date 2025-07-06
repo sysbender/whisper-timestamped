@@ -9,6 +9,8 @@ import subprocess
 from pathlib import Path
 import whisper_timestamped
 import torch
+import webvtt
+from datetime import datetime, timedelta
 
 # Configure logging
 logging.basicConfig(
@@ -134,14 +136,20 @@ def process_file(input_file: Path):
         with open(vtt_path, 'w') as f:
             subprocess.run(cmd, check=True, stdout=f)
 
-        # Archive processed files (copy VTT, move others)
+        # Archive processed files and create adjusted VTT
         archive_audio_path = ARCHIVE_DIR / audio_file.name
         archive_json_path = ARCHIVE_DIR / json_path.name
         archive_vtt_path = ARCHIVE_DIR / vtt_path.name
+        
+        # Create adjusted VTT with buffered end times
+        adjusted_vtt_path = ARCHIVE_DIR / f"{vtt_path.stem}_EndTimeAdjusted.vtt"
+        shift_vtt_times(vtt_path, adjusted_vtt_path)
 
+        # Move and copy files to appropriate locations
         shutil.move(str(audio_file), str(archive_audio_path))
         shutil.move(str(json_path), str(archive_json_path))
-        shutil.copy2(str(vtt_path), str(archive_vtt_path))  # Copy VTT instead of moving
+        shutil.copy2(str(vtt_path), str(archive_vtt_path))  # Copy original VTT to archive
+        shutil.copy2(str(adjusted_vtt_path), str(vtt_path))  # Replace output VTT with adjusted version
 
         logging.info(f"Successfully processed and archived {input_file.name}")
 
@@ -150,6 +158,40 @@ def process_file(input_file: Path):
         # Move problematic file back to input directory
         if proc_file.exists():
             shutil.move(str(proc_file), str(input_file))
+
+import webvtt
+from datetime import datetime, timedelta
+
+def shift_time_string(time_str: str, buffer_seconds: float) -> str:
+    """Shift a VTT time string (e.g., '00:00:01.000') by buffer_seconds forward."""
+    # Parse the time string
+    hours, minutes, seconds = time_str.split(":")
+    sec, ms = seconds.split(".")
+    total_seconds = int(hours) * 3600 + int(minutes) * 60 + int(sec) + float(f"0.{ms}")
+    new_total = total_seconds + buffer_seconds
+    h = int(new_total // 3600)
+    m = int((new_total % 3600) // 60)
+    s = new_total % 60
+    return f"{h:02d}:{m:02d}:{s:06.3f}"
+
+def shift_vtt_times(input_path: Path, output_path: Path, buffer_seconds: float = 0.2):
+    """Shift both start and end times of all VTT subtitle lines by buffer_seconds forward.
+    
+    Args:
+        input_path (Path): Path to input VTT file
+        output_path (Path): Path to output VTT file
+        buffer_seconds (float): Seconds to shift each segment's start and end time (default: 0.2)
+    """
+    # Read the VTT file
+    vtt = webvtt.read(str(input_path))
+    
+    # Process each caption
+    for caption in vtt.captions:
+        caption.start = shift_time_string(caption.start, buffer_seconds)
+        caption.end = shift_time_string(caption.end, buffer_seconds)
+    
+    # Save the modified VTT
+    vtt.save(str(output_path))
 
 def service_loop():
     """Main service loop that monitors the input directory"""

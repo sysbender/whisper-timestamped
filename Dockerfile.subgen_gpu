@@ -42,6 +42,9 @@ RUN cd /usr/src/app/ && pip3 install ".[vad_silero]"
 RUN cd /usr/src/app/ && pip3 install ".[vad_auditok]"
 RUN cd /usr/src/app/ && pip3 install ".[test]"
 
+# Add this line to install webvtt-py
+RUN pip3 install webvtt-py
+
 # Install PyTorch with CUDA support for CUDA 11.8
 RUN pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
